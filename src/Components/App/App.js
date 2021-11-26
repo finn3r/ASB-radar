@@ -55,7 +55,7 @@ const App = () => {
             </div>
             <MapContainer eventHandlers={{click: (e) => console.log(e)}} whenCreated={setMap} center={startPosition}
                           zoom={14} style={{height: "100vh"}}>
-                <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
+                <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" attribution='&copy; Site created by <a href="https://github.com/finn3r/">Finner</a>'/>
                 <MapEvents radarMovable={movable} changeRadarPosition={setRadarPosition}/>
                 <Radar color={color} position={radarPosition} radius={radius * 1000}/>
             </MapContainer>
