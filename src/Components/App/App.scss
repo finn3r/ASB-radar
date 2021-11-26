@@ -18,10 +18,20 @@
 .map__buttons_container{
   position: absolute;
   z-index: 999999;
-  left: 10px;
+  left: 12px;
   top: 75px;
   display: flex;
   flex-direction: column;
+}
+
+.map__button_hide_menu{
+  width: 30px;
+  height: 30px;
+  transition: 0.5s;
+  transform: rotate(180deg);
+  &.hide{
+    transform: rotate(360deg);
+  }
 }
 
 .map__control_element__container{
@@ -32,8 +42,14 @@
   border: 1px black solid;
   border-radius: 5px;
   padding: 7px;
+  max-width: 300px;
   font: 400 15px Arial;
   background-color: rgb(239, 239, 239);
+  transition: all 1s, background-color 0.2s;
+  &.hide:not(.map__button_hide_menu){
+    opacity: 0;
+    margin-left: -300px;
+  }
   &:hover{
     background-color: rgb(210, 210, 210);
     cursor: pointer;

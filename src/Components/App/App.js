@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {MapContainer, TileLayer, useMapEvent} from 'react-leaflet';
 import Radar from "../Radar/Radar";
 import "leaflet/dist/leaflet.css";
+import arrow from './arrow.png';
 import './App.scss';
 
 const MapEvents = (props) => {
@@ -23,6 +24,7 @@ const App = () => {
     const [radius, setRadius] = useState(0.5);
     const [color, setColor] = useState('#00FF00');
     const [map, setMap] = useState(null);
+    const [menuShow, setMenuShow] = useState(true);
 
     const GoToNowPosition = () => {
         map.locate().on("locationfound", function (e) {
@@ -34,20 +36,21 @@ const App = () => {
     return (
         <div id="App">
             <div className={'map__buttons_container'}>
-                <button className={'map__button_goto map__control_element__container'} onClick={GoToNowPosition}>
+                <input type="image" className={"map__button_hide_menu map__control_element__container" + ((menuShow) ? " show" : " hide")} onClick={() => setMenuShow(!menuShow)} src={arrow} alt="Swap"/>
+                <button className={'map__button_goto map__control_element__container' + ((menuShow) ? " show" : " hide")} onClick={GoToNowPosition}>
                     Перместиться на текущую локцию
                 </button>
-                <label className={'map__checkbox_movable__container map__control_element__container'}>
+                <label className={'map__checkbox_movable__container map__control_element__container' + ((menuShow) ? " show" : " hide")}>
                     <input className={'map__checkbox_movable__input'} type={"checkbox"} checked={movable}
                            onChange={() => setMovable(!movable)}/>
                     <p>Перемещение радара по клику</p>
                 </label>
-                <label className={'map__radius_input__container map__control_element__container'}>
+                <label className={'map__radius_input__container map__control_element__container' + ((menuShow) ? " show" : " hide")}>
                     <p>Введите радиус радара(км):</p>
                     <input className={'map__radius_input__field'} type={"text"} value={radius}
                            onChange={(e) => setRadius(e.target.value.replace(',', '.'))}/>
                 </label>
-                <label className={'map__color_input__container map__control_element__container'}>
+                <label className={'map__color_input__container map__control_element__container' + ((menuShow) ? " show" : " hide")}>
                     <p>Выберите цвет для радара:</p>
                     <input className={'map__color_input__field'} type={"color"} value={color}
                            onChange={(e) => setColor(e.target.value)}/>
