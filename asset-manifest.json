@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/ASB-radar/static/css/main.2b5db10c.chunk.css",
-    "main.js": "/ASB-radar/static/js/main.68386326.chunk.js",
-    "main.js.map": "/ASB-radar/static/js/main.68386326.chunk.js.map",
+    "main.js": "/ASB-radar/static/js/main.3ead93d6.chunk.js",
+    "main.js.map": "/ASB-radar/static/js/main.3ead93d6.chunk.js.map",
     "runtime-main.js": "/ASB-radar/static/js/runtime-main.4e5607e5.js",
     "runtime-main.js.map": "/ASB-radar/static/js/runtime-main.4e5607e5.js.map",
     "static/css/2.68ba508b.chunk.css": "/ASB-radar/static/css/2.68ba508b.chunk.css",
@@ -18,6 +18,6 @@
     "static/css/2.68ba508b.chunk.css",
     "static/js/2.11c0d697.chunk.js",
     "static/css/main.2b5db10c.chunk.css",
-    "static/js/main.68386326.chunk.js"
+    "static/js/main.3ead93d6.chunk.js"
   ]
 }
