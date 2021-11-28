@@ -29,7 +29,7 @@ const getPointsPosition = (latlng, distance) => {
     for (let i = 0; i < 4; i++) {
         points.push(getPointPosition(latlng, distance, heading[i]));
     }
-    return [[points[0], points[1]], [points[2], points[3]]];
+    return [[latlng, points[0]], [latlng, points[1]], [latlng, points[2]], [latlng, points[3]]];
 }
 
 const RadarPolyLine = (props) => {
