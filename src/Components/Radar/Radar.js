@@ -54,7 +54,7 @@ const RadarPolyLine = (props) => {
 
 const Radar = (props) => {
     const radarColor = props.color;
-    const radarPosition = props.position;
+    const radarPosition = parseFloat(props.position);
     const radarRadius = props.radius
     const map = useMapEvent('zoom', (e) => {
         setWeight((map.getZoom() / 6).toString());
