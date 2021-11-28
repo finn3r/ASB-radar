@@ -70,7 +70,7 @@ const Radar = (props) => {
     const circlesCount = Math.trunc(radarRadius / 100);
     const circles = getCircles(circlesCount, radarRadius);
     const points = getPointsPosition(radarPosition, radarRadius);
-    if (radarRadius < 100) return null;
+    if ((radarRadius < 100)||(isNaN(radarRadius))) return null;
     return (
         <LayerGroup>
             <Circle
