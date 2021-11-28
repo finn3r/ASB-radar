@@ -56,7 +56,7 @@ const Radar = (props) => {
     const radarColor = props.color;
     const radarPosition = parseFloat(props.position);
     const radarRadius = props.radius
-    const map = useMapEvent('zoom', (e) => {
+    const map = useMapEvent('zoom', () => {
         setWeight((map.getZoom() / 6).toString());
     });
     const [weight, setWeight] = useState((map.getZoom() / 6).toString());
@@ -65,7 +65,6 @@ const Radar = (props) => {
         for (let i = 1; i < count; i++) {
             circles[i - 1] = radius - i * 100;
         }
-        ;
         return circles;
     }
     const circlesCount = Math.trunc(radarRadius / 100);
